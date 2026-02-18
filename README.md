@@ -72,41 +72,6 @@ The XDK token implements several custom mechanics relevant to the exploit:
 
 ---
 
-## Execution Flow
-
-```
-                FLASH_PAIR
-                (WBNB/XDK_BASE)
-                    |
-                1. Flash borrow
-                ~99.78M XDK_BASE
-                    |
-                    v
-        ┌────────────────────────┐
-        │   ATTACK CONTRACT      │
-        │                        │
-        │  2. Init (trigger      │
-        │     recycle cooldown)  │
-        │                        │
-        │  3. Buy loop           │──── swap XDK_BASE → XDK
-        │     (~10% reserve      │     via TARGET_PAIR
-        │      per iteration)    │     (each buy triggers fees
-        │                        │      + recycle on sell-side)
-        │  4. Skim drain loop    │
-        │     (up to 55 iters)   │──── transfer XDK → pair
-        │     check threshold:   │     (triggers recycle →
-        │     maxBal <= thisBal? │      balance > reserve)
-        │     → skim excess      │     pair.skim(attacker)
-        │                        │
-        │  5. Swap drain loop    │──── swap remaining XDK → XDK_BASE
-        │     (remaining XDK)    │     via TARGET_PAIR
-        │                        │
-        │  6. Repay flash loan   │
-        │     + swap profit      │──── XDK_BASE → WBNB
-        │       to WBNB          │
-        └────────────────────────┘
-```
-
 ### Step-by-step
 
 **Phase 1 — Flash Borrow**
