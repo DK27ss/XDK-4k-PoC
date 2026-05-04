@@ -146,3 +146,12 @@ SUCCESS!
 - [Attack Contract on BscScan](https://bscscan.com/address/0x1e7e4e41DefdE022E78AdD6f6e406a7520B63c70)
 - [XDK Token on BscScan](https://bscscan.com/address/0x02739BE625f7A1Cb196F42dceEe630C394DD9FAA)
 - [DeFiLlama — BSC Hacks](https://defillama.com/hacks)
+
+>
+>Company : https://blockraider.xyz/
+>
+>Community : https://discord.gg/Vqqt7jyRr7
+>
+>Disclosure : https://t.me/blockraider_alerts_bot
+
+<img width="161" height="51" alt="blockraider" src="https://github.com/user-attachments/assets/dc86222a-b5fb-49e8-9a9d-350973b7521d" />
